@@ -14,11 +14,12 @@ class ClickBank(webdriver.Chrome):
 
     def __init__(self,driver_path=r"C:\selenium_drivers",teardown=False) -> None:
         self.teardown = teardown
-        self.driver_path = driver_path
+        self.driver_path = os.environ.get("CHROMEDRIVER_PATH") or driver_path
         os.environ['PATH'] += driver_path
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches',['enable-logging'])
         options.add_experimental_option("detach", True)
+        options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
         super(ClickBank,self).__init__(options=options)
         self.implicitly_wait(15)
 
