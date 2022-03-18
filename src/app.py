@@ -3,8 +3,10 @@ from api import ClickBank
 
 
 def main():
-    bot = ClickBank()
-    bot()
+
+    for _ in range(20):
+        bot = ClickBank()
+        bot()
 
 
 if __name__ == '__main__':
