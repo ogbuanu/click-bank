@@ -21,7 +21,8 @@ class ClickBank(webdriver.Chrome):
         options.add_experimental_option("detach", True)
         options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
         super(ClickBank,self).__init__(options=options,executable_path=os.environ.get("CHROMEDRIVER_PATH"))
-        self.implicitly_wait(15)
+        # super(ClickBank,self).__init__(options=options,)
+        # self.implicitly_wait(15)
 
 
     def __call__(self):
