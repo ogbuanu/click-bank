@@ -4,9 +4,10 @@ from api import ClickBank
 
 def main():
 
-    bot = ClickBank()
-    bot()
-    print("visiting the site now.... Done!")
+    for _ in range(25):
+        bot = ClickBank()
+        bot()
+        print("visiting the site now.... Done!")
 
 
 if __name__ == '__main__':
