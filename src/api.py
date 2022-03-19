@@ -18,6 +18,9 @@ class ClickBank(webdriver.Chrome):
         os.environ['PATH'] += driver_path
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches',['enable-logging'])
+        options.add_argument("--headless")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--no-sandbox")
         options.add_experimental_option("detach", True)
         options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
         super(ClickBank,self).__init__(options=options,executable_path=os.environ.get("CHROMEDRIVER_PATH"))
